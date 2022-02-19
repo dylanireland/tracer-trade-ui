@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="assets/css/index.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <link rel="icon" href="assets/photos/favicon.svg" type="image/svg+xml">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bignumber.js/8.0.2/bignumber.min.js" type="application/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.5.1/ethers.umd.js" integrity="sha512-83dP6P/Fmka9dR4PRvT3+FRd2cbMJpCOuSX6iMB3eAI9KHVHHYg0cX2dvgmW/Cs5hZif0qQ8r99JWa6EpGY0Aw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <title>Tracer | Trade Tokens</title>
+</head>
+
+<body>
+  <div id="navbar">
+    <div>
+      <img src="assets/photos/tracer.svg">
+    </div>
+  </div>
+
+  <div id="container">
+    <ul class="tabs">
+  		<li class="active" data-index="0">Buy & Sell</li>
+  		<li data-index="1">Mint & Burn</li>
+  	</ul>
+
+  	<div id="main">
+  		<div>
+        <div>
+    			<h2>Trade Pool Tokens</h2>
+          <div id="tokens">
+            <div onclick="coinClicked(0);">
+              <img src="assets/photos/tokens/btc.svg">
+            </div>
+            <div onclick="coinClicked(1);">
+              <img src="assets/photos/tokens/eth.svg">
+            </div>
+            <div onclick="coinClicked(2);">
+              <img src="assets/photos/tokens/toke.svg">
+            </div>
+            <div onclick="coinClicked(3);">
+              <img src="assets/photos/tokens/link.svg">
+            </div>
+            <div onclick="coinClicked(4);">
+              <img src="assets/photos/tokens/eur.svg">
+            </div>
+            <div onclick="coinClicked(5);">
+              <img src="assets/photos/tokens/aave.svg">
+            </div>
+          </div>
+          <div class="flipflop-wrapper">
+            <div class="flipflop" id="long_short_switch">
+              <button class="left tcr-color long active" onclick="makeLong()">Long</button>
+              <button class="right tcr-color short" onclick="makeShort()">Short</button>
+            </div>
+            <div class="flipflop" id="leverage_switch">
+              <button class="left tcr-color 1x active" onclick="make1x()">1x</button>
+              <button class="right tcr-color 3x" onclick="make3x()">3x</button>
+            </div>
+    		  </div>
+          <div id="buysell" class="fullButtonWidth grey">
+            <div class="left">
+              <button class="button">Buy</button>
+            </div>
+            <div id="coindentifier" class="hidden">
+              <div>
+                <p></p>
+              </div>
+            </div>
+            <div class="right">
+              <button class="button">Sell</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  	</div>
+  </div>
+  <script src="assets/js/index.js"></script>
+  <script src="assets/js/balancer-abi.js"></script>
+  <script src="assets/js/balancer-swap.js"></script>
+</body>
+
+
+</html>
